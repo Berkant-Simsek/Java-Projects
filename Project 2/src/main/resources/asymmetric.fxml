@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.AsymmetricController">
+  <tabs>
+    <Tab text="Bilgilendirme">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="asymmetricExplanation" editable="false" prefHeight="200.0" prefWidth="200.0" text="Asimetrik Şifreleme Algoritmalarına Hoş Geldiniz!&#10;Bu uygulama, verilerinizin güvenliğini sağlamak için asimetrik şifreleme işlemleri yapmak veya şifrelenmiş verileri çözmek için tasarlanmıştır. Asimetrik şifreleme, verilerinizi özel ve genel anahtar çiftleri kullanarak korur ve yalnızca doğru anahtarlarla erişilebilir hale getirir. Aşağıda, uygulamanın nasıl kullanılacağına dair adım adım bir rehber bulacaksınız. Lütfen talimatları takip ederek işlemlerinizi kolayca gerçekleştirin.&#10;&#10;1. Şifreleme mi, Şifre Çözme mi?&#10;Öncelikle ne yapmak istediğinize karar vermelisiniz:&#10;   Şifreleme: Bir metin veya dosyanın içeriğini güvenli bir şekilde şifrelemek.&#10;   Şifre Çözme: Daha önce şifrelenmiş bir metin veya dosyanın içeriğini çözmek.&#10;Bu seçimleri yapmak için ana menüdeki ilgili başlıkları veya butonları kullanabilirsiniz.&#10;&#10;2. Şifreleme İşlemi&#10;Şifreleme, verilerinizi yalnızca ilgili genel anahtar ile şifrelenmiş ve özel anahtar ile çözülebilen bir forma dönüştürür. Bu işlem, verilerinizin güvenliğini sağlamak için kullanılır. Şifreleme işlemini gerçekleştirmek için şu adımları izleyin:&#10;Adım 1: Anahtar Çifti Oluşturun veya Sağlayın&#10;   Şifreleme işlemi için bir özel ve genel anahtar çifti gereklidir. Eğer daha önce bir anahtar çifti oluşturmadıysanız, uygulama üzerinden yeni bir anahtar çifti oluşturabilirsiniz. Bu işlem, seçtiğiniz algoritmaya uygun olarak güvenli bir şekilde gerçekleştirilir.&#10;   Eğer zaten bir anahtar çiftiniz varsa, bir sonraki adımla devam edebilirsiniz.&#10;Adım 2: Girdi ve Genel Anahtar Sağlayın&#10;   Şifreleyeceğiniz metni doğrudan giriş alanına yazın veya bir dosya yükleyin.&#10;   Genel anahtarınızı sağlayın. Bu anahtar, verilerinizi şifrelemek için kullanılacaktır. (Not: Genel anahtarınızı paylaşabilirsiniz, ancak özel anahtarınızı güvenli bir yerde saklayın, çünkü bu anahtar olmadan şifre çözme yapılamaz.)&#10;Adım 3: İşlemi Gerçekleştirin&#10;   “Şifrele” butonuna tıklayarak işlemi başlatın. İşlem tamamlandığında, şifrelenmiş veri panoya kopyalanabilecek veya bir dosya olarak kaydedilebilecektir.&#10;Not: Güvenlik ve kullanım kolaylığı için, işlem sırasında giriş alanları ve butonlar kilitlenebilir. Bu, yanlışlıkla yeni bir veri girişini önlemek için tasarlanmıştır. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;3. Şifre Çözme İşlemi&#10;Şifre çözme, daha önce asimetrik şifreleme ile şifrelenmiş bir metin veya dosyanın içeriğini orijinal haline geri döndürür. Bu işlem, yalnızca doğru özel anahtar ile yapılabilir.&#10;Adım 1: Şifrelenmiş Girdi ve Özel Anahtar Sağlayın&#10;   Şifresini çözmek istediğiniz şifrelenmiş metni girin veya şifrelenmiş dosyayı yükleyin.&#10;   Şifre çözme için gerekli olan özel anahtarı sağlayın. Bu anahtar, şifrelenmiş veriyi çözmek için kullanılır.&#10;Adım 2: İşlemi Gerçekleştirin&#10;   “Şifre Çöz” butonuna tıklayarak işlemi başlatın. Uygulama, sağlanan şifrelenmiş veriyi ve özel anahtarı kullanarak orijinal metni veya dosyayı geri getirecektir.&#10;   Sonuç, orijinal veri panoya kopyalanabilecek veya bir dosya olarak kaydedilebilecektir.&#10;Not: İşlem sırasında giriş alanları kilitlenebilir. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;4. Kullanım İpuçları&#10;Anahtar Güvenliği: Özel ve genel anahtarlarınızı güvenli bir yerde saklayın. Özel anahtar kaybı, şifrelenmiş verilerinizi çözmenizi engeller; genel anahtar kaybı ise yeni şifrelemeler yapmanızı zorlaştırabilir.&#10;Kilit Mekanizması: Yanlışlıkla veri girişini önlemek için işlem sırasında bazı alanlar kilitlenir. İşleminizi tamamladıktan sonra “Yeniden Aktif Et” butonunu kullanabilirsiniz.&#10;Hata Mesajları: Herhangi bir hata durumunda, ekran size neyi yanlış yaptığınızı açıklayan bir mesaj gösterecektir. Mesajları dikkatlice okuyun.&#10;Dosya Desteği: Uygulama, hem metin hem de dosya tabanlı şifreleme ve şifre çözmeyi destekler. Büyük dosyalar için işlem süresi biraz daha uzun olabilir.&#10;&#10;5. Teknik Altyapı&#10;Bu uygulama, güvenli asimetrik şifreleme işlemleri için Bouncy Castle kütüphanesini kullanır. Masaüstü sürümünde JavaFX teknolojisiyle geliştirilmiştir." wrapText="true" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonBack" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonBack" text="Ana Menüye Geri Dön" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content></Tab>
+    <Tab text="Metin Anahtarları Oluşturma">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="copyEncryptKeyButtonForAsymmetric" mnemonicParsing="false" onAction="#copyEncryptKeyButtonForAsymmetric" text="Genel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="copyDecryptKeyButtonForAsymmetric" mnemonicParsing="false" onAction="#copyDecryptKeyButtonForAsymmetric" text="Özel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Label fx:id="encryptKeyInfoLabel" text="Genel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Label fx:id="decryptKeyInfoLabel" text="Özel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonGenerateKeys" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonGenerateKeys" text="Genel ve Özel Anahtar Oluştur" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonGenerateKeysActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonGenerateKeysActivate" text="Tekrardan Anahtar Oluşturmayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="keysExplanation" text="Lütfen Anahtar Oluşturmak İçin Butona Basın!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content></Tab>
+      <Tab text="Metin Şifreleme">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="encryptMessageForAsymmetric" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="encryptKeyForAsymmetric" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonEncryptActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonEncryptActivate" text="Tekrardan Metin Şifrelemeyi Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <center>
+                        <Button fx:id="copyEncryptedMessageButtonForAsymmetric" mnemonicParsing="false" onAction="#copyEncryptedMessageButtonForAsymmetric" text="Şifrelenmiş Metni Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonEncrypt" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonEncrypt" text="Girilen Metni Şifrele" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <center>
+                        <Label fx:id="encryptedMessageInfoLabel" text="Metin Şifrelendi!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <Label fx:id="encryptMessageExplanation" text="Lütfen Şifrelemek İstediğiniz Metni Girin:" />
+                  <Label fx:id="encryptKeyExplanation" text="Lütfen Şifrelemek İstediğiniz Metnin Genel Anahtarını Girin:" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Metin Çözme">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="decryptMessageExplanation" text="Lütfen Şifresinini Çözülmesini İstediğiniz Metni Girin:" />
+                  <Label fx:id="decryptKeyExplanation" text="Lütfen Şifresinin Çözülmesini İstediğiniz Metnin Özel Anahtarını Girin:" GridPane.rowIndex="2" />
+                  <TextArea fx:id="decryptMessageForAsymmetric" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="decryptKeyForAsymmetric" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonDecrypt" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonDecrypt" text="Girilen Metni Çöz" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonDecryptActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonDecryptActivate" text="Tekrardan Metin Çözmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <center>
+                        <Label fx:id="decryptionInfoLabel" text="Metin Çözüldü!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <center>
+                        <Button fx:id="copyDecryptedMessageButtonForAsymmetric" mnemonicParsing="false" onAction="#copyDecryptedMessageButtonForAsymmetric" text="Çözülmüş Metni Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya Anahtarları Oluşturma">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonGenerateKeysFile" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonGenerateKeysFile" text="Genel ve Özel Anahtar Oluştur" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonGenerateKeysFileActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonGenerateKeysFileActivate" text="Tekrardan Anahtar Oluşturmayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="copyEncryptKeyFileButtonForAsymmetric" mnemonicParsing="false" onAction="#copyEncryptKeyFileButtonForAsymmetric" text="Genel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="copyDecryptKeyFileButtonForAsymmetric" mnemonicParsing="false" onAction="#copyDecryptKeyFileButtonForAsymmetric" text="Özel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Label fx:id="encryptKeyInfoLabel" text="Genel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Label fx:id="decryptKeyInfoLabel" text="Özel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="keysExplanation" text="Lütfen Anahtar Oluşturmak İçin Butona Basın!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya Şifreleme">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="encryptMessageExplanation" text="Lütfen Şifrelenmesini İstediğiniz Dosyayı Seçin:" />
+                  <Label fx:id="encryptKeyExplanation" text="Lütfen Şifrelenmesini İstediğiniz Dosyanın Genel Anahtarını Girin:" GridPane.rowIndex="2" />
+                  <TextArea fx:id="encryptFileMessageForAsymmetric" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="encryptFileKeyForAsymmetric" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForAsymmetricButtonFileEncryptEnterActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileEncryptEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForAsymmetricButtonFileEncryptEnter" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileEncryptEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonFileEncrypt" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileEncrypt" text="Seçilen Dosyayı Şifrele" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <center>
+                        <Label fx:id="encryptInfoLabel" text="Dosya Şifrelendi!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonFileEncryptActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileEncryptActivate" text="Tekrardan Dosya Şifrelemeyi Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <center>
+                        <Button fx:id="saveEncryptFileButtonForAsymmetric" mnemonicParsing="false" onAction="#saveEncryptFileButtonForAsymmetric" text="Şifreli Dosyayı Kaydet" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya Çözme">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="decryptMessageExplanation" text="Lütfen Şifresinin Çözülmesini İstediğiniz Dosyayı Seçin:" />
+                  <Label fx:id="decryptKeyExplanation" text="Lütfen Şifresinin Çözülmesini İstediğiniz Dosyanın Özel Anahtarını Girin:" wrapText="true" GridPane.rowIndex="2" />
+                  <TextArea fx:id="decryptFileMessageForAsymmetric" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="decryptFileKeyForAsymmetric" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForAsymmetricButtonFileDecryptEnter" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileDecryptEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForAsymmetricButtonFileDecryptEnterActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileDecryptEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonFileDecrypt" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileDecrypt" text="Seçilen Dosyayı Çöz" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <center>
+                        <Label fx:id="decryptInfoLabel" text="Dosya Çözüldü!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForAsymmetricButtonFileDecryptActivate" mnemonicParsing="false" onAction="#processMenuForAsymmetricButtonFileDecryptActivate" text="Tekrardan Dosya Çözmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <center>
+                        <Button fx:id="saveDecryptFileButtonForAsymmetric" mnemonicParsing="false" onAction="#saveDecryptFileButtonForAsymmetric" text="Çözülmüş Dosyayı Kaydet" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

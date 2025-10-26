@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.SmartCardController">
+  <tabs>
+    <Tab text="Bilgilendirme">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="smartCardExplanation" editable="false" prefHeight="200.0" prefWidth="200.0" text="Kart Okuyucu Kullanımına Hoş Geldiniz!&#10;Bu uygulama, akıllı kartlardaki kimlik doğrulama sertifikasının içeriğini okuyup anlamlandırmak, seçilen bilgileri PDF formatında çıktı almak, kimlik kartı ile bir dosyayı dijital olarak imzalamak ve imzalanmış bir dosyanın doğruluğunu aynı kimlik kartı ile karşılaştırarak doğrulamak için tasarlanmıştır. Uygulama, temaslı Omnikey kart okuyucu cihazıyla çalışır. Aşağıda, uygulamanın nasıl kullanılacağına dair adım adım bir rehber bulacaksınız. Lütfen talimatları takip ederek işlemlerinizi kolayca gerçekleştirin.&#10;&#10;1. Kart Okuyucu Bağlantısını Kontrol Edin&#10;Uygulamayı kullanmadan önce Omnikey kart okuyucunun doğru şekilde bağlandığından emin olmalısınız:&#10;Adım 1: Omnikey Kart Okuyucuyu Bağlayın&#10;   Temaslı Omnikey kart okuyucu cihazınızı bilgisayara bağlayın (USB bağlantısı ile).&#10;   Uygulama, bağlı cihazı otomatik olarak algılar.&#10;   (Not: Omnikey cihaz sürücülerinin yüklü olduğundan emin olun. Gerekirse, cihaz üreticisinin sağladığı yazılımı kurun.)&#10;Adım 2: Kartı Yerleştirin ve Bağlantıyı Kurun&#10;   Akıllı kartınızı (örneğin, kimlik kartınızı) Omnikey kart okuyucuya yerleştirin. Çip ve Omnikey logosu size bakacak şekilde kartın çip kısmı cihazın içinde olacak şekilde yerleştirilmelidir.&#10;   Kartı yerleştirdikten sonra “Kartı Bağla” butonuna tıklayın. Bağlantı başarılı olduğunda, uygulamanın ekranında bağlantının gerçekleştiğine dair bir bilgi mesajı görüntülenecektir.&#10;&#10;2. Kimlik Doğrulama Sertifikasını Okuma&#10;Kimlik kartındaki sertifikayı okumak için aşağıdaki adımları izleyin:&#10;Adım 1: Sertifikayı Okuyun&#10;   Kart bağlandıktan sonra, “Sertifikayı Oku” butonuna tıklayın. Uygulama, karttaki kimlik doğrulama sertifikasını okuyacak ve içeriğini (örneğin, ad, soyad, kimlik numarası, sertifika geçerlilik tarihi) işleyecektir.&#10;Adım 2: PDF Çıktısı Alma (İsteğe Bağlı)&#10;   Okunan sertifika bilgilerinden PDF formatında çıktı almak isterseniz, öncelikle hangi bilgilerin PDF dosyasına dahil edilmesini istediğinizi seçin (örneğin, ad, soyad, kimlik numarası gibi).&#10;   Ardından “PDF Dosyasını Oluştur” butonuna tıklayın. Uygulama, seçilen bilgileri düzenli bir PDF dosyası olarak oluşturacak ve bu dosyayı belirttiğiniz konuma kaydedecektir.&#10;Not: Güvenlik ve kullanım kolaylığı için, işlem sırasında giriş alanları ve butonlar kilitlenebilir. Bu, yanlışlıkla yeni bir veri girişini önlemek için tasarlanmıştır. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;3. Dosya İmzalama İşlemi&#10;Kimlik kartını kullanarak bir dosyayı dijital olarak imzalayabilirsiniz. Bu işlem, dosyanın kaynağını ve bütünlüğünü garanti altına alır.&#10;Adım 1: Dosyayı Seçin ve İmzalayın&#10;   İmzalayacağınız dosyayı seçmek için “Dosya Seç” butonunu kullanın.&#10;   Karttaki özel anahtarı kullanarak imzalama işlemi için “Seçilen Dosyayı İmzala” butonuna tıklayın. İmzalama işlemi, uygulama içinde tanımlı PIN ile otomatik olarak gerçekleştirilir.&#10;   (Not: Kimlik kartlarındaki özel anahtar dışarı çıkarılamaz veya görüntülenemez, bu nedenle güvenli bir şekilde kullanılır.)&#10;Adım 2: İmzayı Kaydedin&#10;   İşlem tamamlandığında, üretilen dijital imza bir dosya olarak kaydedilebilecektir.&#10;   (Not: İmzayı güvenli bir yerde saklayın, çünkü doğrulama işlemi için gereklidir.)&#10;Not: İşlem sırasında giriş alanları kilitlenebilir. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;4. Dosya Doğrulama İşlemi&#10;Kimlik kartı ile imzalanmış bir dosyanın doğruluğunu kontrol etmek için aşağıdaki adımları izleyin:&#10;Adım 1: Dosya ve İmzayı Sağlayın&#10;   Doğrulamak istediğiniz şüphelendiğiniz dosyayı seçmek için “Dosya Seç” butonunu kullanın.&#10;   Kartınızla oluşturulmuş dijital imza dosyasını yüklemek için ilgili alana dosyayı seçin.&#10;Adım 2: İşlemi Gerçekleştirin&#10;   “Doğrula” butonuna tıklayarak işlemi başlatın. Uygulama, sağlanan dosyanın imzasını hesaplayacak ve karttaki genel anahtarı doğrudan kullanarak verilen dijital imza ile karşılaştıracaktır.&#10;   Sonuç, imzanın geçerli olup olmadığını gösterecektir (ör. “Eşleşiyor” veya “Eşleşmiyor”) ve bu bilgi ekranda görüntülenecektir.&#10;Not: İşlem sırasında giriş alanları kilitlenebilir. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;5. Kullanım İpuçları&#10;Cihaz Bağlantısı: Omnikey kart okuyucunun doğru şekilde bağlandığından ve sürücülerinin güncel olduğundan emin olun. Bağlantı sorunları için cihazın kullanım kılavuzuna bakın.&#10;Kart Güvenliği: Kartınıza ait PIN, uygulama içinde tanımlıdır ve kullanıcı tarafından değiştirilemez. Güvenli bir şekilde saklandığından emin olun.&#10;Kilit Mekanizması: Yanlışlıkla veri girişini önlemek için işlem sırasında bazı alanlar kilitlenir. İşleminizi tamamladıktan sonra “Yeniden Aktif Et” butonunu kullanabilirsiniz.&#10;Hata Mesajları: Herhangi bir hata durumunda, ekran size neyi yanlış yaptığınızı açıklayan bir mesaj gösterecektir. Mesajları dikkatlice okuyun.&#10;Dosya Desteği: Uygulama, yalnızca dosya tabanlı imzalama ve doğrulamayı destekler. Büyük dosyalar için işlem süresi biraz daha uzun olabilir.&#10;&#10;6. Teknik Altyapı&#10;Bu uygulama, akıllı kartlarla güvenli iletişim için Java Smart Card I/O API’sini ve güvenli imzalama/doğrulama işlemleri için Bouncy Castle kütüphanesini kullanır. PDF çıktıları için iText kütüphanesi entegre edilmiştir. Masaüstü sürümünde JavaFX teknolojisiyle geliştirilmiştir." wrapText="true" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForSmartCardButtonBack" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonBack" text="Ana Menüye Geri Dön" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content></Tab>
+      <Tab text="Kart Bağlama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="connectMessageExplanation" text="Lütfen Kart Bağlantısını Gerçekleştirmek için Düğmeye Basın!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForSmartCardButtonConnectCard" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonConnectCard" text="Kartı Bağla" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Sertifika Okuma">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="590.0" minWidth="10.0" prefWidth="571.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="619.0" minWidth="10.0" prefWidth="619.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="460.00001525878906" minHeight="10.0" prefHeight="135.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="783.0" minHeight="10.0" prefHeight="725.6" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <CheckBox fx:id="serialNumberCheck" mnemonicParsing="false" text="Seri Numarası" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <center>
+                              <CheckBox fx:id="versionCheck" mnemonicParsing="false" text="Sürüm" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <center>
+                              <CheckBox fx:id="subjectCheck" mnemonicParsing="false" text="Sertifika Sahibi" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <center>
+                              <CheckBox fx:id="validFromCheck" mnemonicParsing="false" text="Geçerlilik Başlangıcı" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                           <center>
+                              <CheckBox fx:id="validToCheck" mnemonicParsing="false" text="Geçerlilik Sonu" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                           <center>
+                              <CheckBox fx:id="issuerCheck" mnemonicParsing="false" text="Yayıncı" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                           <center>
+                              <CheckBox fx:id="signatureAlgorithmCheck" mnemonicParsing="false" text="İmza Algoritması" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
+                           <center>
+                              <CheckBox fx:id="publicKeyAlgorithmCheck" mnemonicParsing="false" text="Genel Anahtar Algoritma" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8">
+                           <center>
+                              <CheckBox fx:id="publicKeyValueCheck" mnemonicParsing="false" text="Genel Anahtar Değer" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
+                           <center>
+                              <CheckBox fx:id="keyUsageCheck" mnemonicParsing="false" text="Anahtar Kullanımı" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="10">
+                           <center>
+                              <CheckBox fx:id="extendedKeyUsageCheck" mnemonicParsing="false" text="Gelişmiş Anahtar Kullanımı" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="11">
+                           <center>
+                              <CheckBox fx:id="sdoHashCheck" mnemonicParsing="false" text="SDOHash" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="12">
+                           <center>
+                              <CheckBox fx:id="documentNoCheck" mnemonicParsing="false" text="Kart Seri Numarası" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="13">
+                           <center>
+                              <CheckBox fx:id="basicConstraintsCheck" mnemonicParsing="false" text="Temel Kısıtlar" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="14">
+                           <center>
+                              <CheckBox fx:id="authorityKeyIdentifierCheck" mnemonicParsing="false" text="Yayıncı Anahtar Tanımlayıcısı" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="15">
+                           <center>
+                              <CheckBox fx:id="subjectKeyIdentifierCheck" mnemonicParsing="false" text="Özne Anahtar Tanımlayıcı" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="16">
+                           <center>
+                              <CheckBox fx:id="crlDistributionPointCheck" mnemonicParsing="false" text="Sil Dağıtım Noktaları" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="17">
+                           <center>
+                              <CheckBox fx:id="authorityInformationAccessCheck" mnemonicParsing="false" text="Üretici Erişim Noktaları" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="18">
+                           <center>
+                              <CheckBox fx:id="certificatePolicyCheck" mnemonicParsing="false" text="Sertifika İlkesi" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Label fx:id="pdfMessageExplanation" text="Lütfen Okunan Sertifikada Yer Alan Bilgilerden Hangisinin PDF Olarak Elde Etmek İstiyorsanız Sol Taraftan Seçiniz!" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <GridPane GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <Button fx:id="savePdfFileButtonForSmartCard" mnemonicParsing="false" onAction="#savePdfFileButtonForSmartCard" text="PDF Dosyasını Oluştur" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <center>
+                                    <Button fx:id="savePdfFileButtonForSmartCardActivate" mnemonicParsing="false" onAction="#savePdfFileButtonForSmartCardActivate" text="Tekrardan PDF Dosyasını Oluşturmayı Aktif Et" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForSmartCardButtonReadCertificate" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonReadCertificate" text="Sertifikayı Oku" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="readMessageExplanation" text="Seçilen Kartın Kimlik Doğrulama Sertifikasını Okumak için Düğmeye Basın!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Kart ile Dosya İmzalama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="signMessageExplanation" text="Lütfen İmzalamak İstediğiniz Dosyayı Seçin:" />
+                  <TextArea fx:id="signFileMessageForSmartCard" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForSmartCardButtonFileSignEnterActivate" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileSignEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForSmartCardButtonFileSignEnter" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileSignEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForSmartCardButtonFileSign" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileSign" text="Seçilen Dosyayı İmzala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <center>
+                        <Label fx:id="signInfoLabel" text="Dosya İmzalandı!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForSmartCardButtonFileSignActivate" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileSignActivate" text="Tekrardan Dosya İmzalamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="saveSignedFileButtonForSmartCard" mnemonicParsing="false" onAction="#saveSignedFileButtonForSmartCard" text="İmzalanmış Dosyayı Kaydet" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Kart ile Dosya Doğrulama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="validateMessageExplanation" text="Lütfen Doğrulamak İstediğiniz Dosyayı Seçin:" />
+                  <TextArea fx:id="validateFileMessageForSmartCard" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForSmartCardButtonFileValidateEnter" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileValidateEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForSmartCardButtonFileValidateEnterActivate" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileValidateEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForSmartCardButtonFileValidate" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileValidate" text="Seçilen Dosyayı Doğrula" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForSmartCardButtonFileValidateActivate" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileValidateActivate" text="Tekrardan Dosya Doğrulamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <TextArea fx:id="validateFileSignatureForSmartCard" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <Label fx:id="validateSignatureExplanation" text="Lütfen Doğrulamak İstediğiniz Dosyanın İmza Dosyasını Seçin:" GridPane.rowIndex="2" />
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForSmartCardButtonFileSignedEnter" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileSignedEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForSmartCardButtonFileSignedEnterActivate" mnemonicParsing="false" onAction="#processMenuForSmartCardButtonFileSignedEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.HashController">
+  <tabs>
+    <Tab text="Bilgilendirme">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="hashExplanation" editable="false" prefHeight="200.0" prefWidth="200.0" text="Hashleme Algoritmalarına Hoş Geldiniz!&#10;Bu uygulama, verilerinizin benzersiz bir özetini (hash) oluşturmak veya mevcut bir hash kodunu ya da dosyayı doğrulamak için tasarlanmıştır. Hashleme, veri bütünlüğünü kontrol etmek, parolaları güvenli bir şekilde saklamak veya verilerinizi karşılaştırmak için kullanılan güçlü bir yöntemdir. Aşağıda, uygulamanın nasıl kullanılacağına dair adım adım bir rehber bulacaksınız. Lütfen talimatları takip ederek işlemlerinizi kolayca gerçekleştirin.&#10;&#10;1. Hashleme mi, Doğrulama mı?&#10;Öncelikle ne yapmak istediğinize karar vermelisiniz:&#10;   Hashleme: Bir metin veya dosyanın hash kodunu oluşturmak.&#10;   Doğrulama: Daha önce oluşturulmuş bir hash kodunun geçerliliğini ya da bir dosyanın doğruluğunu kontrol etmek.&#10;Bu seçimleri yapmak için ana menüdeki ilgili başlıkları veya butonları kullanabilirsiniz.&#10;&#10;2. Hashleme İşlemi&#10;Hashleme, verilerinizin sabit uzunlukta bir özetini (hash kodu) üretir. Bu işlem geri döndürülemez, yani hash kodundan orijinal veriye ulaşılamaz. Hashleme işlemini gerçekleştirmek için şu adımları izleyin:&#10;Adım 1: Girdi Sağlayın&#10;   Bir metin girebilir veya bir dosya yükleyebilirsiniz. Metni doğrudan giriş alanına yazın ya da dosya seçme butonunu kullanarak dosyanızı yükleyin.&#10;Adım 2: İşlemi Gerçekleştirin&#10;   “Hashle” butonuna tıklayarak işlemi başlatın. İşlem tamamlandığında, üretilen hash kodu panoya kopyalanabilecektir.&#10;Not: Güvenlik ve kullanım kolaylığı için, işlem sırasında giriş alanları ve butonlar kilitlenebilir. Bu, yanlışlıkla yeni bir veri girişini önlemek için tasarlanmıştır. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;3. Doğrulama İşlemi&#10;Doğrulama, daha önce oluşturulmuş bir hash kodunun, verilen bir metin veya dosya ile eşleşip eşleşmediğini kontrol eder. Bu işlem, veri bütünlüğünü doğrulamak için kullanılır.&#10;Adım 1: Girdi ve Hash Kodu Sağlayın&#10;   Doğrulamak istediğiniz metni girin veya bir dosyayı yükleyin. Bu metin/dosya, orijinal veri olmak zorunda değildir; elinizdeki herhangi bir veriyle hash kodunun doğruluğunu test edebilirsiniz.&#10;   Daha önce oluşturulmuş hash kodunu ilgili alana yapıştırın. Hash kodu, orijinal veriye aitse, veri bütünlüğünü doğrulamanıza olanak tanır.&#10;Adım 2: İşlemi Gerçekleştirin&#10;   “Doğrula” butonuna tıklayarak işlemi başlatın. Uygulama, sağlanan metin/dosyanın hash değerini hesaplayacak ve verilen hash koduyla karşılaştıracaktır.&#10;   Sonuç, hash kodunun geçerli olup olmadığını gösterecektir (ör. “Eşleşiyor” veya “Eşleşmiyor”).&#10;Not: İşlem sırasında giriş alanları kilitlenebilir. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;4. Kullanım İpuçları&#10;Hash Kodunun Güvenliği: Hash kodlarınızı güvenli bir yerde saklayın. Bu kodlar, veri bütünlüğünü doğrulamak için önemlidir.&#10;Kilit Mekanizması: Yanlışlıkla veri girişini önlemek için işlem sırasında bazı alanlar kilitlenir. İşleminizi tamamladıktan sonra “Yeniden Aktif Et” butonunu kullanabilirsiniz.&#10;Hata Mesajları: Herhangi bir hata durumunda, ekran size neyi yanlış yaptığınızı açıklayan bir mesaj gösterecektir. Mesajları dikkatlice okuyun.&#10;Dosya Desteği: Uygulama, hem metin hem de dosya tabanlı hashleme ve doğrulamayı destekler. Büyük dosyalar için işlem süresi biraz daha uzun olabilir.&#10;&#10;5. Teknik Altyapı&#10;Bu uygulama, güvenli hashleme işlemleri için Bouncy Castle kütüphanesini kullanır. Masaüstü sürümünde JavaFX teknolojisiyle geliştirilmiştir." wrapText="true" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonBack" mnemonicParsing="false" onAction="#processMenuForHashButtonBack" text="Ana Menüye Geri Dön" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content></Tab>
+      <Tab text="Metin Hashleme">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="hashMessageForHash" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonHashActivate" mnemonicParsing="false" onAction="#processMenuForHashButtonHashActivate" text="Tekrardan Metin Hashlemeyi Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="copyHashButtonForHash" mnemonicParsing="false" onAction="#copyHashButtonForHash" text="Hashi Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonHash" mnemonicParsing="false" onAction="#processMenuForHashButtonHash" text="Girilen Metni Hashle" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <center>
+                        <Label fx:id="hashInfoLabel" text="Metin Hashlendi!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <Label fx:id="hashMessageExplanation" text="Lütfen Hashlemek İstediğiniz Metni Girin:" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Metin Doğrulama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="matchMessageExplanation" text="Lütfen Doğrulamak Metni Girin:" />
+                  <Label fx:id="hashExplanationLabel" text="Lütfen Doğrulamak İstediğiniz Metnin Hashini Girin:" GridPane.rowIndex="2" />
+                  <TextArea fx:id="matchMessageForHash" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="hashForHash" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonMatch" mnemonicParsing="false" onAction="#processMenuForHashButtonMatch" text="Girilen Metni Doğrula" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonMatchActivate" mnemonicParsing="false" onAction="#processMenuForHashButtonMatchActivate" text="Tekrardan Metin Doğrulamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya Hashleme">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="hashMessageExplanation" text="Lütfen Hashlemek İstediğiniz Dosyayı Seçin:" />
+                  <TextArea fx:id="hashFileMessageForHash" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForHashButtonFileHashEnterActivate" mnemonicParsing="false" onAction="#processMenuForHashButtonFileHashEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForHashButtonFileHashEnter" mnemonicParsing="false" onAction="#processMenuForHashButtonFileHashEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonFileHash" mnemonicParsing="false" onAction="#processMenuForHashButtonFileHash" text="Seçilen Dosyayı Hashle" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <center>
+                        <Label fx:id="hashInfoLabel" text="Dosya Hashlendi!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonFileHashActivate" mnemonicParsing="false" onAction="#processMenuForHashButtonFileHashActivate" text="Tekrardan Dosya Hashlemeyi Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="copyHashFileButtonForHash" mnemonicParsing="false" onAction="#copyHashFileButtonForHash" text="Hashi Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya Doğrulama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="matchMessageExplanation" text="Lütfen Doğrulamak İstediğiniz Dosyayı Seçin:" />
+                  <Label fx:id="hashExplanationLabel" text="Lütfen Doğrulamak İstediğiniz Dosyanın Hashini Girin:" wrapText="true" GridPane.rowIndex="2" />
+                  <TextArea fx:id="matchFileMessageForHash" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="hashFileForHash" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForHashButtonFileMatchEnter" mnemonicParsing="false" onAction="#processMenuForHashButtonFileMatchEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForHashButtonFileMatchEnterActivate" mnemonicParsing="false" onAction="#processMenuForHashButtonFileMatchEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonFileMatch" mnemonicParsing="false" onAction="#processMenuForHashButtonFileMatch" text="Seçilen Dosyayı Doğrula" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForHashButtonFileMatchActivate" mnemonicParsing="false" onAction="#processMenuForHashButtonFileMatchActivate" text="Tekrardan Dosya Doğrulamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

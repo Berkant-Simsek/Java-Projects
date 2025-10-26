@@ -1,0 +1,16 @@
+.root { -fx-background-color: #F0F0F0; -fx-padding: 20; }
+.title-label { -fx-font-size: 20pt; -fx-font-family: "Arial"; -fx-text-fill: #007BFF; -fx-font-weight: bold; }
+.label { -fx-font-family: "Segoe UI"; -fx-font-size: 14pt; }
+.radio-button { -fx-text-fill: #6C757D; -fx-font-size: 14pt; -fx-alignment: center-left; }
+.radio-button:selected { -fx-text-fill: #007BFF; }
+/*.button { -fx-background-color: #6C757D; -fx-text-fill: white; -fx-font-size: 12pt; }*/
+/*.button:hover { -fx-background-color: #0056B3; }*/
+.button { -fx-background-color: #28A745; -fx-text-fill: white; -fx-font-size: 12pt; }
+.button:hover { -fx-background-color: #218838; }
+.button:disabled { -fx-opacity: 0.5; }
+#confirmButton { -fx-background-color: #28A745; }
+#confirmButton:hover { -fx-background-color: #218838; }
+.text-area { -fx-font-size: 12pt; -fx-background-color: white; -fx-border-color: #CCCCCC; }
+.explanation-text { -fx-font-size: 12pt; -fx-text-fill: #333333; -fx-font-style: italic; }
+
+grok son konuşmaya bak

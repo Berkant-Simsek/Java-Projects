@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.SignController">
+  <tabs>
+    <Tab text="Bilgilendirme">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="signExplanation" editable="false" prefHeight="200.0" prefWidth="200.0" text="İmzalama Algoritmalarına Hoş Geldiniz!&#10;Bu uygulama, verilerinizin kaynağını ve bütünlüğünü garanti altına almak için dijital imzalama işlemleri yapmak veya mevcut bir dijital imzayı doğrulamak için tasarlanmıştır. Dijital imzalama, verilerinizin güvenilirliğini kanıtlamak ve değiştirilmediğini doğrulamak için kullanılan güçlü bir yöntemdir. Aşağıda, uygulamanın nasıl kullanılacağına dair adım adım bir rehber bulacaksınız. Lütfen talimatları takip ederek işlemlerinizi kolayca gerçekleştirin.&#10;&#10;1. İmzalama mı, Doğrulama mı?&#10;Öncelikle ne yapmak istediğinize karar vermelisiniz:&#10;   İmzalama: Bir metin veya dosyanın dijital imzasını oluşturmak.&#10;   Doğrulama: Daha önce oluşturulmuş bir dijital imzanın geçerliliğini kontrol etmek.&#10;Bu seçimleri yapmak için ana menüdeki ilgili başlıkları veya butonları kullanabilirsiniz.&#10;&#10;2. İmzalama İşlemi&#10;İmzalama, verilerinizin güvenilirliğini ve kaynağını kanıtlamak için bir dijital imza üretir. Bu işlem, özel bir anahtar kullanılarak gerçekleştirilir ve yalnızca ilgili genel anahtar ile doğrulanabilir. İmzalama işlemini gerçekleştirmek için şu adımları izleyin:&#10;Adım 1: Anahtar Çifti Oluşturun veya Sağlayın&#10;   İmzalama işlemi için bir özel ve genel anahtar çifti gereklidir. Eğer daha önce bir anahtar çifti oluşturmadıysanız, uygulama üzerinden yeni bir anahtar çifti oluşturabilirsiniz. Bu işlem, seçtiğiniz algoritmaya uygun olarak güvenli bir şekilde gerçekleştirilir.&#10;   Eğer zaten bir anahtar çiftiniz varsa, bir sonraki adımla devam edebilirsiniz.&#10;Adım 2: Girdi ve Özel Anahtar Sağlayın&#10;   İmzalayacağınız metni doğrudan giriş alanına yazın veya bir dosya yükleyin.&#10;   Özel anahtarınızı sağlayın. Bu anahtar, imzanızı oluşturmak için kullanılacaktır. (Not: Özel anahtarınızı güvenli bir yerde saklayın, çünkü bu anahtar olmadan imzalama yapılamaz.)&#10;Adım 3: İşlemi Gerçekleştirin&#10;   “İmzala” butonuna tıklayarak işlemi başlatın. İşlem tamamlandığında, üretilen dijital imza panoya kopyalanabilecek veya bir dosya olarak kaydedilebilecektir.&#10;Not: Güvenlik ve kullanım kolaylığı için, işlem sırasında giriş alanları ve butonlar kilitlenebilir. Bu, yanlışlıkla yeni bir veri girişini önlemek için tasarlanmıştır. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;3. Doğrulama İşlemi&#10;Doğrulama, daha önce oluşturulmuş bir dijital imzanın, verilen bir metin veya dosya ile eşleşip eşleşmediğini kontrol eder. Bu işlem, verinin kaynağını ve bütünlüğünü doğrulamak için kullanılır.&#10;Adım 1: Girdi, İmza ve Genel Anahtar Sağlayın&#10;   Doğrulamak istediğiniz metni girin veya bir dosyayı yükleyin. Bu metin/dosya, orijinal veri olmak zorunda değildir; elinizdeki herhangi bir veriyle imzanın doğruluğunu test edebilirsiniz.&#10;   Daha önce oluşturulmuş dijital imzayı ilgili alana yapıştırın veya dosyadan yükleyin.&#10;   İmzayı doğrulamak için gerekli olan genel anahtarı sağlayın. Bu anahtar, imzanın geçerliliğini kontrol etmek için kullanılır.&#10;Adım 2: İşlemi Gerçekleştirin&#10;   “Doğrula” butonuna tıklayarak işlemi başlatın. Uygulama, sağlanan metin/dosyanın imzasını hesaplayacak ve verilen dijital imza ile genel anahtarı kullanarak karşılaştıracaktır.&#10;   Sonuç, imzanın geçerli olup olmadığını gösterecektir (ör. “Eşleşiyor” veya “Eşleşmiyor”).&#10;Not: İşlem sırasında giriş alanları kilitlenebilir. Kilidi kaldırmak için “Yeniden Aktif Et” butonuna tıklayın.&#10;&#10;4. Kullanım İpuçları&#10;Anahtar Güvenliği: Özel ve genel anahtarlarınızı güvenli bir yerde saklayın. Özel anahtar kaybı, yeni imzalar oluşturmanızı engeller; genel anahtar kaybı ise doğrulamayı imkansız hale getirebilir.&#10;Kilit Mekanizması: Yanlışlıkla veri girişini önlemek için işlem sırasında bazı alanlar kilitlenir. İşleminizi tamamladıktan sonra “Yeniden Aktif Et” butonunu kullanabilirsiniz.&#10;Hata Mesajları: Herhangi bir hata durumunda, ekran size neyi yanlış yaptığınızı açıklayan bir mesaj gösterecektir. Mesajları dikkatlice okuyun.&#10;Dosya Desteği: Uygulama, hem metin hem de dosya tabanlı imzalama ve doğrulamayı destekler. Büyük dosyalar için işlem süresi biraz daha uzun olabilir.&#10;&#10;5. Teknik Altyapı&#10;Bu uygulama, güvenli imzalama işlemleri için Bouncy Castle kütüphanesini kullanır. Masaüstü sürümünde JavaFX teknolojisiyle geliştirilmiştir." wrapText="true" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonBack" mnemonicParsing="false" onAction="#processMenuForSignButtonBack" text="Ana Menüye Geri Dön" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content></Tab>
+    <Tab text="Metin Anahtarları Oluşturma">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="copySignKeyButtonForSign" mnemonicParsing="false" onAction="#copySignKeyButtonForSign" text="Özel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="copyValidateKeyButtonForSign" mnemonicParsing="false" onAction="#copyValidateKeyButtonForSign" text="Genel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Label fx:id="signKeyInfoLabel" text="Özel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Label fx:id="validateKeyInfoLabel" text="Genel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonGenerateKeys" mnemonicParsing="false" onAction="#processMenuForSignButtonGenerateKeys" text="Genel ve Özel Anahtar Oluştur" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonGenerateKeysActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonGenerateKeysActivate" text="Tekrardan Anahtar Oluşturmayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="keysExplanation" text="Lütfen Anahtar Oluşturmak İçin Butona Basın!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content></Tab>
+      <Tab text="Metin İmzalama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="signMessageForSign" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="signKeyForSign" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonSignActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonSignActivate" text="Tekrardan Metin İmzalamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <center>
+                        <Button fx:id="copySignedMessageButtonForSign" mnemonicParsing="false" onAction="#copySignedMessageButtonForSign" text="İmzalanmış Metni Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonSign" mnemonicParsing="false" onAction="#processMenuForSignButtonSign" text="Girilen Metni İmzala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <center>
+                        <Label fx:id="signedMessageInfoLabel" text="Metin İmzalandı!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <Label fx:id="signMessageExplanation" text="Lütfen İmzalamak İstediğiniz Metni Girin:" />
+                  <Label fx:id="signKeyExplanation" text="Lütfen İmzalamak İstediğiniz Metnin Özel Anahtarını Girin:" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Metin Doğrulama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="validateMessageExplanation" text="Lütfen Doğrulamak İstediğiniz Metni Girin:" />
+                  <Label fx:id="validateKeyExplanation" text="Lütfen Doğrulamak İstediğiniz Metnin Genel Anahtarını Girin:" GridPane.rowIndex="4" />
+                  <TextArea fx:id="validateMessageForSign" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="validateKeyForSign" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonValidate" mnemonicParsing="false" onAction="#processMenuForSignButtonValidate" text="Girilen Metni Doğrula" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonValidateActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonValidateActivate" text="Tekrardan Metin Doğrulamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <Label fx:id="validateSignatureExplanation" text="Lütfen Doğrulamak İstediğiniz Metnin İmzasını Girin:" GridPane.rowIndex="2" />
+                  <TextArea fx:id="validateSignatureForSign" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya Anahtarları Oluşturma">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonGenerateKeysFile" mnemonicParsing="false" onAction="#processMenuForSignButtonGenerateKeysFile" text="Genel ve Özel Anahtar Oluştur" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonGenerateKeysFileActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonGenerateKeysFileActivate" text="Tekrardan Anahtar Oluşturmayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="copySignKeyFileButtonForSign" mnemonicParsing="false" onAction="#copySignKeyFileButtonForSign" text="Özel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="copyValidateKeyFileButtonForSign" mnemonicParsing="false" onAction="#copyValidateKeyFileButtonForSign" text="Genel Anahtarı Kopyala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Label fx:id="signKeyInfoLabel" text="Özel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Label fx:id="validateKeyInfoLabel" text="Genel Anahtar Oluşturuldu!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="keysExplanation" text="Lütfen Anahtar Oluşturmak İçin Butona Basın!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya İmzalama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="signMessageExplanation" text="Lütfen İmzalamak İstediğiniz Dosyayı Seçin:" />
+                  <Label fx:id="signKeyExplanation" text="Lütfen İmzalamak İstediğiniz Dosyanın Özel Anahtarını Girin:" GridPane.rowIndex="2" />
+                  <TextArea fx:id="signFileMessageForSign" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="signFileKeyForSign" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForSignButtonFileSignEnterActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonFileSignEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForSignButtonFileSignEnter" mnemonicParsing="false" onAction="#processMenuForSignButtonFileSignEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonFileSign" mnemonicParsing="false" onAction="#processMenuForSignButtonFileSign" text="Seçilen Dosyayı İmzala" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <center>
+                        <Label fx:id="signedMessageInfoLabel" text="Dosya İmzalandı!" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonFileSignActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonFileSignActivate" text="Tekrardan Dosya İmzalamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <center>
+                        <Button fx:id="saveSignedFileButtonForSign" mnemonicParsing="false" onAction="#saveSignedFileButtonForSign" text="İmzalanmış Dosyayı Kaydet" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Dosya Doğrulama">
+         <content>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="validateMessageExplanation" text="Lütfen Doğrulamak İstediğiniz Dosyayı Seçin:" />
+                  <Label fx:id="validateKeyExplanation" text="Lütfen Doğrulamak İstediğiniz Dosyanın Genel Anahtarını Girin:" wrapText="true" GridPane.rowIndex="4" />
+                  <TextArea fx:id="validateFileMessageForSign" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="validateFileKeyForSign" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForSignButtonFileValidateEnter" mnemonicParsing="false" onAction="#processMenuForSignButtonFileValidateEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForSignButtonFileValidateEnterActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonFileValidateEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonFileValidate" mnemonicParsing="false" onAction="#processMenuForSignButtonFileValidate" text="Seçilen Dosyayı Doğrula" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <center>
+                        <Button fx:id="processMenuForSignButtonFileValidateActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonFileValidateActivate" text="Tekrardan Dosya Doğrulamayı Aktif Et" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <TextArea fx:id="validateFileSignatureForSign" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <Label fx:id="validateSignatureExplanation" text="Lütfen Doğrulamak İstediğiniz Dosyanın İmza Dosyasını Seçin:" GridPane.rowIndex="2" />
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="processMenuForSignButtonFileSignedEnter" mnemonicParsing="false" onAction="#processMenuForSignButtonFileSignedEnter" text="Dosya Seç" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button fx:id="processMenuForSignButtonFileSignedEnterActivate" mnemonicParsing="false" onAction="#processMenuForSignButtonFileSignedEnterActivate" text="Tekrardan Dosya Seçmeyi Aktif Et" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
