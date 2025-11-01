@@ -189,7 +189,7 @@ public class MenuFunctions extends MenuComponents {
 
     private void initializeActions(){
         encryptOption.setOnAction(e -> {
-            encryptSubMenu.setVisible(true); // Şifreleme alt menüsünü göster
+            encryptSubMenu.setVisible(true);
             signSubMenu.setVisible(false);
             hashSubMenu.setVisible(false);
             clearSelections(groupSymmetricAndAsymmetric, groupSymmetricOption, groupAsymmetricOption, groupSignOption, groupHashOption);
@@ -211,7 +211,7 @@ public class MenuFunctions extends MenuComponents {
         });
 
         signOption.setOnAction(e -> {
-            encryptSubMenu.setVisible(false); // Şifreleme alt menüsünü gizle
+            encryptSubMenu.setVisible(false);
             symmetricSubMenu.setVisible(false);
             asymmetricSubMenu.setVisible(false);
             signSubMenu.setVisible(true);
@@ -291,62 +291,10 @@ public class MenuFunctions extends MenuComponents {
                 controller.setMainMenu(mainMenu);
                 controller.setStage(stage);
 
-                // Create and set the scene
                 Scene scene = new Scene(root, 1200, 900);
                 stage.setTitle("Şifreleme ve İmzalama Uygulaması - " + getSelectedAlgorithm());
                 stage.setScene(scene);
                 stage.show();
-
-//                stage.getScene().setRoot(processMenuForSymmetric);
-//                Label title = new Label(getSelectedAlgorithm());
-//                title.setStyle("-fx-font-size: 25pt;");
-//                GridPane firstGrid = new GridPane();
-//                firstGrid.add(title, 0, 0);
-//                firstGrid.add(processMenuForSymmetricButtonBack, 1, 0);
-//                firstGrid.setHgap(5);
-//                processMenuForSymmetric.getChildren().add(firstGrid);
-//                encryptMessageExplanation = new Label("Lütfen Şifrelenmesini İstediğiniz Metni Girin ya da Dosya Seçin:");
-//                GridPane secondGrid = new GridPane();
-//                secondGrid.add(encryptMessageExplanation, 0, 0);
-//                secondGrid.add(encryptionMessageForSymmetric, 0, 1);
-//                secondGrid.add(processMenuForSymmetricButtonFileEncryptEnter, 1, 0);
-//                secondGrid.add(processMenuForSymmetricButtonFileEncryptEnterActivate, 2, 0);
-//                secondGrid.setHgap(5);
-//                GridPane thirdGrid = new GridPane();
-//                thirdGrid.add(processMenuForSymmetricButtonEncrypt, 0, 0);
-//                thirdGrid.add(processMenuForSymmetricButtonEncryptActivate, 1, 0);
-//                thirdGrid.add(processMenuForSymmetricButtonFileEncrypt, 2, 0);
-//                thirdGrid.add(processMenuForSymmetricButtonFileEncryptActivate, 3, 0);
-//                thirdGrid.setHgap(5);
-//                processMenuForSymmetric.getChildren().addAll(secondGrid, thirdGrid);
-//                decryptionMessageExplanation = new Label("Lütfen Şifresinin Çözülmesini İstediğiniz Şifreli Metni ya da Şifreli Dosyayı Girin:");
-//                GridPane fourthGrid = new GridPane();
-//                fourthGrid.add(decryptionMessageExplanation, 0, 0);
-//                fourthGrid.add(decryptionMessageForSymmetric, 0, 1);
-//                fourthGrid.add(processMenuForSymmetricButtonFileDecryptEnter, 1, 0);
-//                fourthGrid.add(processMenuForSymmetricButtonFileDecryptEnterActivate, 2, 0);
-//                fourthGrid.setHgap(5);
-//                processMenuForSymmetric.getChildren().add(fourthGrid);
-//                decryptionKeyExplanation = new Label("Lütfen Şifresinin Çözülmesini İstediğiniz Metnin ya da Dosyanın Anahtarını Girin:");
-//                GridPane fifthGrid = new GridPane();
-//                fifthGrid.add(decryptionKeyExplanation, 0, 0);
-//                fifthGrid.add(decryptionKeyForSymmetric, 0, 1);
-//                GridPane sixthGrid = new GridPane();
-//                sixthGrid.add(processMenuForSymmetricButtonDecrypt, 0, 0);
-//                sixthGrid.add(processMenuForSymmetricButtonDecryptActivate, 1, 0);
-//                sixthGrid.add(processMenuForSymmetricButtonFileDecrypt, 2, 0);
-//                sixthGrid.add(processMenuForSymmetricButtonFileDecryptActivate, 3, 0);
-//                sixthGrid.setHgap(5);
-//                processMenuForSymmetric.getChildren().addAll(fifthGrid, sixthGrid);
-//                algoritma = getSelectedAlgorithm();
-//                String information = Algoritmalar.startMessage(algoritma, "İlk", "İlk", "İlk", "İlk", "İlk");
-//                Alert alertInformation = new Alert(Alert.AlertType.INFORMATION);
-//                String[] headerText = algoritma.split(":");
-//                alertInformation.setHeight(350);
-//                alertInformation.setWidth(600);
-//                alertInformation.setHeaderText(headerText[0]);
-//                alertInformation.setContentText(information);
-//                alertInformation.showAndWait();
             }
 
             if (whichMenu[0].equals("Asimetrik")) {
@@ -364,76 +312,10 @@ public class MenuFunctions extends MenuComponents {
                 controller.setMainMenu(mainMenu);
                 controller.setStage(stage);
 
-                // Create and set the scene
                 Scene scene = new Scene(root, 1200, 900);
                 stage.setTitle("Şifreleme ve İmzalama Uygulaması - " + getSelectedAlgorithm());
                 stage.setScene(scene);
                 stage.show();
-
-//                stage.getScene().setRoot(processMenuForAsymmetric);
-//                Label title = new Label(getSelectedAlgorithm());
-//                title.setStyle("-fx-font-size: 25pt;");
-//                GridPane firstGrid = new GridPane();
-//                firstGrid.add(title, 0, 0);
-//                firstGrid.add(processMenuForAsymmetricButtonBack, 1, 0);
-//                firstGrid.setHgap(5);
-//                processMenuForAsymmetric.getChildren().add(firstGrid);
-//                keysExplanation = new Label("Lütfen Anahtarlarınızı Oluşturmak İçin Butona Basın");
-//                GridPane secondGrid = new GridPane();
-//                secondGrid.add(keysExplanation, 0, 0);
-//                secondGrid.add(processMenuForAsymmetricButtonGenerateKeys, 1, 0);
-//                secondGrid.add(processMenuForAsymmetricButtonGenerateKeysActivate, 2, 0);
-//                secondGrid.add(processMenuForAsymmetricButtonGenerateKeysFile, 3, 0);
-//                secondGrid.add(processMenuForAsymmetricButtonGenerateKeysFileActivate, 4, 0);
-//                secondGrid.setHgap(5);
-//                processMenuForAsymmetric.getChildren().addAll(secondGrid);
-//                encryptMessageExplanation = new Label("Lütfen Şifrelenmesini İstediğiniz Metni Girin ya da Dosya Seçin:");
-//                GridPane thirdGrid = new GridPane();
-//                thirdGrid.add(encryptMessageExplanation, 0, 0);
-//                thirdGrid.add(encryptMessageForAsymmetric, 0, 1);
-//                thirdGrid.add(processMenuForAsymmetricButtonFileEncryptEnter, 1, 0);
-//                thirdGrid.add(processMenuForAsymmetricButtonFileEncryptEnterActivate, 2, 0);
-//                thirdGrid.setHgap(5);
-//                processMenuForAsymmetric.getChildren().addAll(thirdGrid);
-//                encryptKeyExplanation = new Label("Lütfen Şifrelenmesini İstediğiniz Metnin ya da Dosyanın Genel Anahtarını Girin:");
-//                GridPane fourthGrid = new GridPane();
-//                fourthGrid.add(encryptKeyExplanation, 0, 0);
-//                fourthGrid.add(encryptKeyForAsymmetric, 0, 1);
-//                GridPane fifthGrid = new GridPane();
-//                fifthGrid.add(processMenuForAsymmetricButtonEncrypt, 0, 0);
-//                fifthGrid.add(processMenuForAsymmetricButtonEncryptActivate, 1, 0);
-//                fifthGrid.add(processMenuForAsymmetricButtonFileEncrypt, 2, 0);
-//                fifthGrid.add(processMenuForAsymmetricButtonFileEncryptActivate, 3, 0);
-//                fifthGrid.setHgap(5);
-//                processMenuForAsymmetric.getChildren().addAll(fourthGrid, fifthGrid);
-//                decryptMessageExplanation = new Label("Lütfen Şifresinin Çözülmesini İstediğiniz Şifreli Metni ya da Şifreli Dosyayı Girin:");
-//                GridPane sixthGrid = new GridPane();
-//                sixthGrid.add(decryptMessageExplanation, 0, 0);
-//                sixthGrid.add(decryptMessageForAsymmetric, 0, 1);
-//                sixthGrid.add(processMenuForAsymmetricButtonFileDecryptEnter, 1, 0);
-//                sixthGrid.add(processMenuForAsymmetricButtonFileDecryptEnterActivate, 2, 0);
-//                sixthGrid.setHgap(5);
-//                processMenuForAsymmetric.getChildren().addAll(sixthGrid);
-//                decryptKeyExplanation = new Label("Lütfen Şifresinin Çözülmesini İstediğiniz Metnin ya da Dosyanın Özel Anahtarını Girin:");
-//                GridPane seventhGrid = new GridPane();
-//                seventhGrid.add(decryptKeyExplanation, 0, 0);
-//                seventhGrid.add(decryptKeyForAsymmetric, 0, 1);
-//                GridPane eighthGrid = new GridPane();
-//                eighthGrid.add(processMenuForAsymmetricButtonDecrypt, 0, 0);
-//                eighthGrid.add(processMenuForAsymmetricButtonDecryptActivate, 1, 0);
-//                eighthGrid.add(processMenuForAsymmetricButtonFileDecrypt, 2, 0);
-//                eighthGrid.add(processMenuForAsymmetricButtonFileDecryptActivate, 3, 0);
-//                eighthGrid.setHgap(5);
-//                processMenuForAsymmetric.getChildren().addAll(seventhGrid, eighthGrid);
-//                algoritma = getSelectedAlgorithm();
-//                String information = Algoritmalar.startMessage(algoritma, "İlk", "İlk", "İlk", "İlk", "İlk");
-//                Alert alertInformation = new Alert(Alert.AlertType.INFORMATION);
-//                String[] headerText = algoritma.split(":");
-//                alertInformation.setHeight(350);
-//                alertInformation.setWidth(600);
-//                alertInformation.setHeaderText(headerText[0]);
-//                alertInformation.setContentText(information);
-//                alertInformation.showAndWait();
             }
 
             if (whichMenu[0].equals("İmzalama:")) {
@@ -451,85 +333,10 @@ public class MenuFunctions extends MenuComponents {
                 controller.setMainMenu(mainMenu);
                 controller.setStage(stage);
 
-                // Create and set the scene
                 Scene scene = new Scene(root, 1200, 900);
                 stage.setTitle("Şifreleme ve İmzalama Uygulaması - " + getSelectedAlgorithm());
                 stage.setScene(scene);
                 stage.show();
-
-//                stage.getScene().setRoot(processMenuForSign);
-//                Label title = new Label(getSelectedAlgorithm());
-//                title.setStyle("-fx-font-size: 25pt;");
-//                GridPane firstGrid = new GridPane();
-//                firstGrid.add(title, 0, 0);
-//                firstGrid.add(processMenuForSignButtonBack, 1, 0);
-//                firstGrid.setHgap(5);
-//                processMenuForSign.getChildren().add(firstGrid);
-//                keysExplanation = new Label("Lütfen Anahtarlarınızı Oluşturmak İçin Butona Basın");
-//                GridPane secondGrid = new GridPane();
-//                secondGrid.add(keysExplanation, 0, 0);
-//                secondGrid.add(processMenuForSignButtonGenerateKeys, 1, 0);
-//                secondGrid.add(processMenuForSignButtonGenerateKeysActivate, 2, 0);
-//                secondGrid.add(processMenuForSignButtonGenerateKeysFile, 3, 0);
-//                secondGrid.add(processMenuForSignButtonGenerateKeysFileActivate, 4, 0);
-//                secondGrid.setHgap(5);
-//                processMenuForSign.getChildren().addAll(secondGrid);
-//                signMessageExplanation = new Label("Lütfen İmzalanmasını İstediğiniz Metni Girin ya da Dosya Seçin:");
-//                GridPane thirdGrid = new GridPane();
-//                thirdGrid.add(signMessageExplanation, 0, 0);
-//                thirdGrid.add(signMessageForSign, 0, 1);
-//                thirdGrid.add(processMenuForSignButtonFileSignEnter, 1, 0);
-//                thirdGrid.add(processMenuForSignButtonFileSignEnterActivate, 2, 0);
-//                thirdGrid.setHgap(5);
-//                processMenuForSign.getChildren().addAll(thirdGrid);
-//                signKeyExplanation = new Label("Lütfen İmzalanmasını İstediğiniz Metnin ya da Dosyanın Özel Anahtarını Girin:");
-//                GridPane fourthGrid = new GridPane();
-//                fourthGrid.add(signKeyExplanation, 0, 0);
-//                fourthGrid.add(signKeyForSign, 0, 1);
-//                GridPane fifthGrid = new GridPane();
-//                fifthGrid.add(processMenuForSignButtonSign, 0, 0);
-//                fifthGrid.add(processMenuForSignButtonSignActivate, 1, 0);
-//                fifthGrid.add(processMenuForSignButtonFileSign, 2, 0);
-//                fifthGrid.add(processMenuForSignButtonFileSignActivate, 3, 0);
-//                fifthGrid.setHgap(5);
-//                processMenuForSign.getChildren().addAll(fourthGrid, fifthGrid);
-//                validateMessageExplanation = new Label("Lütfen Doğrulamak İstediğiniz Metni Girin ya da Dosya Seçin:");
-//                GridPane sixthGrid = new GridPane();
-//                sixthGrid.add(validateMessageExplanation, 0, 0);
-//                sixthGrid.add(validateMessageForSign, 0, 1);
-//                sixthGrid.add(processMenuForSignButtonFileValidateEnter, 1, 0);
-//                sixthGrid.add(processMenuForSignButtonFileValidateEnterActivate, 2, 0);
-//                sixthGrid.setHgap(5);
-//                processMenuForSign.getChildren().addAll(sixthGrid);
-//                validateSignatureExplanation = new Label("Lütfen İmzayı Girin ya da İmzalanmış Dosyayı Seçin:");
-//                GridPane seventhGrid = new GridPane();
-//                seventhGrid.add(validateSignatureExplanation, 0, 0);
-//                seventhGrid.add(validateSignatureForSign, 0, 1);
-//                seventhGrid.add(processMenuForSignButtonFileSignedEnter, 1, 0);
-//                seventhGrid.add(processMenuForSignButtonFileSignedEnterActivate, 2, 0);
-//                seventhGrid.setHgap(5);
-//                processMenuForSign.getChildren().addAll(seventhGrid);
-//                validateKeyExplanation = new Label("Lütfen Doğrulanmasını İstediğiniz Metnin ya da Dosyanın Genel Anahtarını Girin:");
-//                GridPane eighthGrid = new GridPane();
-//                eighthGrid.add(validateKeyExplanation, 0, 0);
-//                eighthGrid.add(validateKeyForSign, 0, 1);
-//                eighthGrid.setHgap(5);
-//                GridPane ninthGrid = new GridPane();
-//                ninthGrid.add(processMenuForSignButtonValidate, 0, 0);
-//                ninthGrid.add(processMenuForSignButtonValidateActivate, 1, 0);
-//                ninthGrid.add(processMenuForSignButtonFileValidate, 2, 0);
-//                ninthGrid.add(processMenuForSignButtonFileValidateActivate, 3, 0);
-//                ninthGrid.setHgap(5);
-//                processMenuForSign.getChildren().addAll(eighthGrid, ninthGrid);
-//                algoritma = getSelectedAlgorithm();
-//                String information = Algoritmalar.startMessage(algoritma, "İlk", "İlk", "İlk", "İlk", "İlk");
-//                Alert alertInformation = new Alert(Alert.AlertType.INFORMATION);
-//                String[] headerText = algoritma.split(":");
-//                alertInformation.setHeight(350);
-//                alertInformation.setWidth(600);
-//                alertInformation.setHeaderText(headerText[0]);
-//                alertInformation.setContentText(information);
-//                alertInformation.showAndWait();
             }
 
             if (whichMenu[0].equals("Hash:")) {
@@ -547,63 +354,10 @@ public class MenuFunctions extends MenuComponents {
                 controller.setMainMenu(mainMenu);
                 controller.setStage(stage);
 
-                // Create and set the scene
                 Scene scene = new Scene(root, 1200, 900);
                 stage.setTitle("Şifreleme ve İmzalama Uygulaması - " + getSelectedAlgorithm());
                 stage.setScene(scene);
                 stage.show();
-
-//                stage.getScene().setRoot(processMenuForHash);
-//                Label title = new Label(getSelectedAlgorithm());
-//                title.setStyle("-fx-font-size: 25pt;");
-//                GridPane firstGrid = new GridPane();
-//                firstGrid.add(title, 0, 0);
-//                firstGrid.add(processMenuForHashButtonBack, 1, 0);
-//                firstGrid.setHgap(5);
-//                processMenuForHash.getChildren().add(firstGrid);
-//                hashMessageExplanation = new Label("Lütfen Hashlenmesini İstediğiniz Metni Girin ya da Dosyayı Seçin:");
-//                GridPane secondGrid = new GridPane();
-//                secondGrid.add(hashMessageExplanation, 0, 0);
-//                secondGrid.add(hashMessageForHash, 0, 1);
-//                secondGrid.add(processMenuForHashButtonFileHashEnter, 1, 0);
-//                secondGrid.add(processMenuForHashButtonFileHashEnterActivate, 2, 0);
-//                secondGrid.setHgap(5);
-//                GridPane thirdGrid = new GridPane();
-//                thirdGrid.add(processMenuForHashButtonHash, 0, 0);
-//                thirdGrid.add(processMenuForHashButtonHashActivate, 1, 0);
-//                thirdGrid.add(processMenuForHashButtonFileHash, 2, 0);
-//                thirdGrid.add(processMenuForHashButtonFileHashActivate, 3, 0);
-//                thirdGrid.setHgap(5);
-//                processMenuForHash.getChildren().addAll(secondGrid, thirdGrid);
-//                matchMessageExplanation = new Label("Lütfen Şüphelendiğiniz Metni Girin ya da Dosyayı Seçin:");
-//                GridPane fourthGrid = new GridPane();
-//                fourthGrid.add(matchMessageExplanation, 0, 0);
-//                fourthGrid.add(matchMessageForHash, 0, 1);
-//                fourthGrid.add(processMenuForHashButtonFileMatchEnter, 1, 0);
-//                fourthGrid.add(processMenuForHashButtonFileMatchEnterActivate, 2, 0);
-//                fourthGrid.setHgap(5);
-//                processMenuForHash.getChildren().addAll(fourthGrid);
-//                hashExplanation = new Label("Lütfen Doğruluğundan Emin Olduğunuz Metnin ya da Dosyanın Hashini Girin:");
-//                GridPane fifthGrid = new GridPane();
-//                fifthGrid.add(hashExplanation, 0, 0);
-//                fifthGrid.add(hashForHash, 0, 1);
-//                fifthGrid.setHgap(5);
-//                GridPane sixthGrid = new GridPane();
-//                sixthGrid.add(processMenuForHashButtonMatch, 0, 0);
-//                sixthGrid.add(processMenuForHashButtonMatchActivate, 1, 0);
-//                sixthGrid.add(processMenuForHashButtonFileMatch, 2, 0);
-//                sixthGrid.add(processMenuForHashButtonFileMatchActivate, 3, 0);
-//                sixthGrid.setHgap(5);
-//                processMenuForHash.getChildren().addAll(fifthGrid, sixthGrid);
-//                algoritma = getSelectedAlgorithm();
-//                String information = Algoritmalar.startMessage(algoritma, "İlk", "İlk", "İlk", "İlk", "İlk");
-//                Alert alertInformation = new Alert(Alert.AlertType.INFORMATION);
-//                String[] headerText = algoritma.split(":");
-//                alertInformation.setHeight(350);
-//                alertInformation.setWidth(600);
-//                alertInformation.setHeaderText(headerText[0]);
-//                alertInformation.setContentText(information);
-//                alertInformation.showAndWait();
             }
 
             if (whichMenu[0].equals("Akıllı")) {
@@ -621,28 +375,10 @@ public class MenuFunctions extends MenuComponents {
                 controller.setMainMenu(mainMenu);
                 controller.setStage(stage);
 
-                // Create and set the scene
                 Scene scene = new Scene(root, 1200, 900);
                 stage.setTitle("Şifreleme ve İmzalama Uygulaması - " + getSelectedAlgorithm());
                 stage.setScene(scene);
                 stage.show();
-
-                /*try {
-                    Card card = connectToCard();
-                    System.out.println("Kart başarıyla bağlandı!");
-
-                    LinkedHashMap<String, String> certificationInfo = readCertificate(card);
-                    for (Map.Entry<String, String> entry : certificationInfo.entrySet()) {
-                        System.out.println(entry.getKey() + ": " + entry.getValue());
-                    }
-                    System.out.println("Sertifika Okundu!");
-
-                    //hahahahahahaha
-
-                    card.disconnect(false);
-                } catch (Exception ee) {
-                    ee.printStackTrace();
-                }*/
             }
         });
 
