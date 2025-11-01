@@ -61,15 +61,9 @@ public class MainApp extends Application {
         //          Storing hashed passwords securely
         //          Ensuring data integrity in digital signatures
         //          Blockchain transaction validation
-
-
-        // Butonlara basıldığı zaman işaretciği değiştir
-        // Sağ kaydırma için HBox kullanıyoruz
-        // Alt menüye öğeleri ekliyoruz
-        // Ana menüye seçenekleri ekliyoruz
-        // "Şifreleme" seçeneği seçildiğinde alt menüyü göster
-
-
+        
+        
+        
         menuFunctions.encryptOption.setVisible(true);
         menuFunctions.signOption.setVisible(true);
         menuFunctions.encryptOption.setSelected(false);
