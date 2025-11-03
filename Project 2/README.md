@@ -34,7 +34,7 @@ Uygulamayı yerel makinenizde çalıştırmak için aşağıdaki adımları izle
 ### 🛠️ Kurulum Adımları
 Repoyu Klonlayın 🌀
 ```bash
-git clone https://github.com/berkantsimsek-1/project.git && cd project
+git clone https://github.com/Berkant-Simsek/Java-Projects.git && cd Java-Projects && cd Project 2
 ```
 Omnikey Kart Okuyucu Sürücülerini Kurun: Omnikey kart okuyucu sürücülerini resmi web sitesinden indirin ve kurun. Cihazın USB üzerinden doğru bağlandığını kontrol edin.
 
