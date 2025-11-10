@@ -248,19 +248,19 @@ public class SifrelemeAsimetrikEcies extends SifrelemeAsimetrik {
 
     @Override
     public byte[] solveFile(byte[] userOutputFile, String userInputDecryptKey) {
-        String[] parts = userInputDecryptKey.split(":");
-
         String userOutputFileSplit = bytesToHex(userOutputFile);
         String[] partss = userOutputFileSplit.split("112233445566777766554433221131313131");
-        byte[] userOutputFileSplitBytes = hexToBytes(partss[1]);
+        String[] partsss = partss[1].split("012345677654321031012345677654321031");
+        byte[] userOutputFileSplitBytes = hexToBytes(partsss[0]);
 
         ECNamedCurveParameterSpec spec = ECNamedCurveTable.getParameterSpec("secp521r1");
         ECDomainParameters domainParameters = new ECDomainParameters(spec.getCurve(), spec.getG(), spec.getN(), spec.getH(), spec.getSeed());
-        byte[] privateKeyBytes = hexToBytes(parts[0]);
+        byte[] privateKeyBytes = hexToBytes(userInputDecryptKey);
         BigInteger d = new BigInteger(1, privateKeyBytes);
         ECPrivateKeyParameters privateKey = new ECPrivateKeyParameters(d, domainParameters);
         IESEngine engine = new IESEngine(new ECDHBasicAgreement(), new KDF2BytesGenerator(new SHA256Digest()), new HMac(new SHA256Digest()), new PaddedBufferedBlockCipher(new CBCBlockCipher(new AESEngine())));
         IESWithCipherParameters iesParams = new IESWithCipherParameters(null, null, 128, 128);
+
 
         byte[] ephemeralPublicKeyBytes = hexToBytes(partss[0]);
         ECPoint R = spec.getCurve().decodePoint(ephemeralPublicKeyBytes);
@@ -274,7 +274,7 @@ public class SifrelemeAsimetrikEcies extends SifrelemeAsimetrik {
             throw new RuntimeException(e);
         }
 
-        byte[] fileFormatBytes = hexToBytes(parts[1]);
+        byte[] fileFormatBytes = hexToBytes(partsss[1]);
         byte[] numbers = new byte[] {0x01, 0x23, 0x45, 0x67, 0x76, 0x54, 0x32, 0x10, 0x31};
         byte[] finalDecrypted = new byte[decryptedBytes.length+9+fileFormatBytes.length];
         System.arraycopy(decryptedBytes, 0, finalDecrypted, 0, decryptedBytes.length);
