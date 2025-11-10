@@ -447,7 +447,7 @@ public class SignController implements Initializable {
         processMenuForSignButtonGenerateKeysFile.setDisable(true);
         processMenuForSignButtonGenerateKeysFileActivate.setDisable(false);
         copySignKeyFileButtonForSign.setVisible(true);
-        copyValidateKeyFileButtonForSign.setVisible(false);
+        copyValidateKeyFileButtonForSign.setVisible(true);
     }
 
     @FXML
@@ -474,8 +474,7 @@ public class SignController implements Initializable {
     @FXML
     private void copyValidateKeyFileButtonForSign() {
         String validateKey = bytesToHex(validateKeyInfoBytes);
-        String fileFormat = bytesToHex(privateKeyFileFormatBytes);
-        String decryptKeyAndFormat = validateKey + ":" + fileFormat;
+        String decryptKeyAndFormat = validateKey;
 
         Clipboard clipboard = Clipboard.getSystemClipboard();
         ClipboardContent content = new ClipboardContent();
@@ -601,7 +600,6 @@ public class SignController implements Initializable {
                 processMenuForSignButtonFileSignActivate.setDisable(false);
                 signFileMessageForSign.setEditable(false);
                 signFileKeyForSign.setEditable(true);
-                copyValidateKeyFileButtonForSign.setVisible(true);
                 saveSignedFileButtonForSign.setVisible(true);
             }
         }
@@ -628,13 +626,17 @@ public class SignController implements Initializable {
         processMenuForSignButtonFileSignActivate.setDisable(true);
         signFileMessageForSign.setEditable(false);
         signFileKeyForSign.setEditable(true);
-        copyValidateKeyFileButtonForSign.setVisible(false);
         saveSignedFileButtonForSign.setVisible(false);
     }
 
     @FXML
     private void saveSignedFileButtonForSign() {
-        byte[] bytes = privateKeyFileInfoBytes;
+        byte[] numbersss = new byte[] {0x01, 0x23, 0x45, 0x67, 0x76, 0x54, 0x32, 0x10, 0x31, 0x01, 0x23, 0x45, 0x67, 0x76, 0x54, 0x32, 0x10, 0x31};
+        byte[] bytes = new byte[privateKeyFileInfoBytes.length+18+privateKeyFileFormatBytes.length];
+        System.arraycopy(privateKeyFileInfoBytes, 0, bytes, 0, privateKeyFileInfoBytes.length);
+        System.arraycopy(numbersss, 0, bytes, privateKeyFileInfoBytes.length, 18);
+        System.arraycopy(privateKeyFileFormatBytes, 0, bytes, privateKeyFileInfoBytes.length+18, privateKeyFileFormatBytes.length);
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Oluşturulan İmzalı Dosyayı Kaydet");
         fileChooser.setInitialFileName("imzali_dosya");
