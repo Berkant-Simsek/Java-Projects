@@ -781,9 +781,10 @@ public class SmartCardController implements Initializable {
     @FXML
     private void saveSignedFileButtonForSmartCard() {
         byte[] bytes = signFileInfoBytes;
+        String[] fileName = selectedFileSmartCardSignName.split("\\.");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Oluşturulan İmzalı Dosyayı Kaydet");
-        fileChooser.setInitialFileName("imzali_dosya");
+        fileChooser.setInitialFileName(fileName[0]);
         FileChooser.ExtensionFilter fileFormat = new FileChooser.ExtensionFilter("İmzalanmış Dosyalar", "*.sig");
         fileChooser.getExtensionFilters().add(fileFormat);
         fileChooser.getSelectedExtensionFilter();
