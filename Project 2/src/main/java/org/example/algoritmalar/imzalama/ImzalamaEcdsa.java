@@ -228,16 +228,15 @@ public class ImzalamaEcdsa extends Imzalama {
         byte[] sha256MatchBytes = new byte[32];
         sha256Match.doFinal(sha256MatchBytes, 0);
 
-        String[] publicKeyAndFormat = userInputValidateKey.split(":");
-
         String separateSignature = bytesToHex(userInputSignature);
-        String[] rAndS = separateSignature.split("112233445566777766554433221131313131");
+        String[] separeteSignatureAndFileFormat = separateSignature.split("012345677654321031012345677654321031");
+        String[] rAndS = separeteSignatureAndFileFormat[0].split("112233445566777766554433221131313131");
         BigInteger r = new BigInteger(1, hexToBytes(rAndS[0]));
         BigInteger s = new BigInteger(1, hexToBytes(rAndS[1]));
 
         ECNamedCurveParameterSpec spec = ECNamedCurveTable.getParameterSpec("secp256r1");
         ECDomainParameters domainParameters = new ECDomainParameters(spec.getCurve(), spec.getG(), spec.getN(), spec.getH(), spec.getSeed());
-        byte[] publicKeyBytes = hexToBytes(publicKeyAndFormat[0]);
+        byte[] publicKeyBytes = hexToBytes(userInputValidateKey);
         ECPoint Q = spec.getCurve().decodePoint(publicKeyBytes);
         ECPublicKeyParameters publicKey = new ECPublicKeyParameters(Q, domainParameters);
 
@@ -245,7 +244,7 @@ public class ImzalamaEcdsa extends Imzalama {
         signer.init(false, publicKey);
         boolean verified = signer.verifySignature(sha256MatchBytes, r, s);
 
-        if (verified && fileAndFormat[1].equals(publicKeyAndFormat[1])) {
+        if (verified && fileAndFormat[1].equals(separeteSignatureAndFileFormat[1])) {
             byte[] trueMatchBytes = new byte[] {0x31};
             return trueMatchBytes;
         } else {
