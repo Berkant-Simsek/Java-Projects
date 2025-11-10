@@ -262,8 +262,7 @@ public class ImzalamaRsa extends Imzalama {
         byte[] sha256MatchBytes = new byte[32];
         sha256Match.doFinal(sha256MatchBytes, 0);
 
-        String[] publicKeyAndFormat = userInputValidateKey.split(":");
-        String[] parts = publicKeyAndFormat[0].split("012345677654321031");
+        String[] parts = userInputValidateKey.split("012345677654321031");
         BigInteger modulus = new BigInteger(1, hexToBytes(parts[0]));
         BigInteger exponent = new BigInteger(1, hexToBytes(parts[1]));
         RSAKeyParameters publicKey = new RSAKeyParameters(false, modulus, exponent);
@@ -272,9 +271,12 @@ public class ImzalamaRsa extends Imzalama {
         signer.init(false, publicKey);
         signer.update(sha256MatchBytes, 0, sha256MatchBytes.length);
 
-        boolean verified = signer.verifySignature(userInputSignature);
+        String separateSignature = bytesToHex(userInputSignature);
+        String[] separeteSignatureAndFileFormat = separateSignature.split("012345677654321031012345677654321031");
+        byte[] separeteSignatureBytes = hexToBytes(separeteSignatureAndFileFormat[0]);
+        boolean verified = signer.verifySignature(separeteSignatureBytes);
 
-        if (verified && fileAndFormat[1].equals(publicKeyAndFormat[1])) {
+        if (verified && fileAndFormat[1].equals(separeteSignatureAndFileFormat[1])) {
             byte[] trueMatchBytes = new byte[] {0x31};
             return trueMatchBytes;
         } else {
