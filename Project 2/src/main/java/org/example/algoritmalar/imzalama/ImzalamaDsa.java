@@ -281,8 +281,7 @@ public class ImzalamaDsa extends Imzalama {
         byte[] sha256MatchBytes = new byte[32];
         sha256Match.doFinal(sha256MatchBytes, 0);
 
-        String[] publicKeyAndFormat = userInputValidateKey.split(":");
-        String[] parts = publicKeyAndFormat[0].split("012345677654321031");
+        String[] parts = userInputValidateKey.split("012345677654321031");
         BigInteger publicKeyP = new BigInteger(1, hexToBytes(parts[0]));
         BigInteger publicKeyQ = new BigInteger(1, hexToBytes(parts[1]));
         BigInteger publicKeyG = new BigInteger(1, hexToBytes(parts[2]));
@@ -291,7 +290,8 @@ public class ImzalamaDsa extends Imzalama {
         DSAPublicKeyParameters publicKey = new DSAPublicKeyParameters(publicYBytes, dsaParams);
 
         String separateSignature = bytesToHex(userInputSignature);
-        String[] rAndS = separateSignature.split("112233445566777766554433221131313131");
+        String[] separeteSignatureAndFileFormat = separateSignature.split("012345677654321031012345677654321031");
+        String[] rAndS = separeteSignatureAndFileFormat[0].split("112233445566777766554433221131313131");
         BigInteger r = new BigInteger(1, hexToBytes(rAndS[0]));
         BigInteger s = new BigInteger(1, hexToBytes(rAndS[1]));
 
@@ -299,7 +299,7 @@ public class ImzalamaDsa extends Imzalama {
         signer.init(false, publicKey);
         boolean verified = signer.verifySignature(sha256MatchBytes, r, s);
 
-        if (verified && fileAndFormat[1].equals(publicKeyAndFormat[1])) {
+        if (verified && fileAndFormat[1].equals(separeteSignatureAndFileFormat[1])) {
             byte[] trueMatchBytes = new byte[] {0x31};
             return trueMatchBytes;
         } else {
