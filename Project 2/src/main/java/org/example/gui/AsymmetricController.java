@@ -635,9 +635,10 @@ public class AsymmetricController implements Initializable {
         System.arraycopy(numbersss, 0, bytes, publicKeyInfoBytes.length, 18);
         System.arraycopy(fileFormatBytess, 0, bytes, publicKeyInfoBytes.length+18, fileFormatBytess.length);
 
+        String[] fileName = selectedFileAsymmetricEncryptName.split("\\.");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Oluşturulan Şifreli Dosyayı Kaydet");
-        fileChooser.setInitialFileName("sifreli_dosya");
+        fileChooser.setInitialFileName(fileName[0]);
         FileChooser.ExtensionFilter fileFormat = new FileChooser.ExtensionFilter("Şifrelenmiş Dosyalar", "*.bin");
         fileChooser.getExtensionFilters().add(fileFormat);
         fileChooser.getSelectedExtensionFilter();
@@ -781,9 +782,10 @@ public class AsymmetricController implements Initializable {
         byte[] fileNameFormatBytes = fileFormatBytes;
         String fileNameFormat = new String(fileNameFormatBytes, StandardCharsets.UTF_8);
 
+        String[] fileName = selectedFileAsymmetricDecryptName.split("\\.");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Çözülmüş Dosyayı Kaydet");
-        fileChooser.setInitialFileName("cozulmus_dosya");
+        fileChooser.setInitialFileName(fileName[0]);
         FileChooser.ExtensionFilter fileFormat = new FileChooser.ExtensionFilter("Şifrelenmiş Dosyalar", "*." + fileNameFormat);
         fileChooser.getExtensionFilters().add(fileFormat);
         fileChooser.getSelectedExtensionFilter();
