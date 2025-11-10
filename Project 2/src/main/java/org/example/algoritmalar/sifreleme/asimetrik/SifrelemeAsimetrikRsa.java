@@ -238,10 +238,11 @@ public class SifrelemeAsimetrikRsa extends SifrelemeAsimetrik {
 
     @Override
     public byte[] solveFile(byte[] userOutputFile, String userInputDecryptKey) {
-        byte[] inputBytesDecryptMessage = userOutputFile;
-        String[] parts = userInputDecryptKey.split(":");
+        String userOutputFileSplit = bytesToHex(userOutputFile);
+        String[] parts = userOutputFileSplit.split("012345677654321031012345677654321031");
+        byte[] inputBytesDecryptMessage = hexToBytes(parts[0]);
 
-        String[] partss = parts[0].split("012345677654321031");
+        String[] partss = userInputDecryptKey.split("012345677654321031");
         BigInteger modulus = new BigInteger(1, hexToBytes(partss[0]));
         BigInteger exponent = new BigInteger(1, hexToBytes(partss[1]));
         BigInteger p = new BigInteger(1, hexToBytes(partss[2]));
