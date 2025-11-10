@@ -73,7 +73,7 @@ Ayrıntılı talimatlar için aşağıdaki kılavuzlara göz atabilirsiniz:
 
 ## 🤝 Katkıda Bulunma
 Projeye katkıda bulunmak isterseniz, aşağıdaki adımları izleyin:
-- [ ] Depoyu forklayın: https://github.com/berkantsimsek-1/project.git
+- [ ] Depoyu forklayın: https://github.com/Berkant-Simsek/Java-Projects.git
 - [ ] Yeni bir branch oluşturun: git checkout -b feature/yeni-ozellik
 - [ ] Değişikliklerinizi yapın ve commit edin: git commit -m "Yeni özellik eklendi"
 - [ ] Branch’i push edin: git push origin feature/yeni-ozellik
