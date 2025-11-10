@@ -33,7 +33,7 @@ public class AsymmetricController implements Initializable {
     public Label encryptKeyInfo;
     public byte[] encryptKeyInfoBytes;
     public byte[] publicKeyInfoBytes;
-    public byte[] publicKeyfileFormatBytes;
+    public byte[] fileFormatBytess;
     public Label decryptionInfo;
     public Label decryptKeyInfo;
     public byte[] decryptKeyInfoBytes;
@@ -445,7 +445,7 @@ public class AsymmetricController implements Initializable {
         processMenuForAsymmetricButtonGenerateKeysFile.setDisable(true);
         processMenuForAsymmetricButtonGenerateKeysFileActivate.setDisable(false);
         copyEncryptKeyFileButtonForAsymmetric.setVisible(true);
-        copyDecryptKeyFileButtonForAsymmetric.setVisible(false);
+        copyDecryptKeyFileButtonForAsymmetric.setVisible(true);
     }
 
     @FXML
@@ -472,8 +472,7 @@ public class AsymmetricController implements Initializable {
     @FXML
     private void copyDecryptKeyFileButtonForAsymmetric() {
         String decryptKey = bytesToHex(decryptKeyInfoBytes);
-        String fileFormat = bytesToHex(publicKeyfileFormatBytes);
-        String decryptKeyAndFormat = decryptKey + ":" + fileFormat;
+        String decryptKeyAndFormat = decryptKey;
 
         Clipboard clipboard = Clipboard.getSystemClipboard();
         ClipboardContent content = new ClipboardContent();
@@ -592,14 +591,13 @@ public class AsymmetricController implements Initializable {
                 String keyAndFormat = bytesToHex(encryptionContentBytes);
                 String[] parts = keyAndFormat.split("012345677654321031");
                 publicKeyInfoBytes = hexToBytes(parts[0]);
-                publicKeyfileFormatBytes = hexToBytes(parts[1]);
+                fileFormatBytess = hexToBytes(parts[1]);
                 processMenuForAsymmetricButtonFileEncryptEnter.setDisable(true);
                 processMenuForAsymmetricButtonFileEncryptEnterActivate.setDisable(true);
                 processMenuForAsymmetricButtonFileEncrypt.setDisable(true);
                 processMenuForAsymmetricButtonFileEncryptActivate.setDisable(false);
                 encryptFileMessageForAsymmetric.setEditable(false);
                 encryptFileKeyForAsymmetric.setEditable(false);
-                copyDecryptKeyFileButtonForAsymmetric.setVisible(true);
                 saveEncryptFileButtonForAsymmetric.setVisible(true);
             }
         }
@@ -626,13 +624,17 @@ public class AsymmetricController implements Initializable {
         processMenuForAsymmetricButtonFileEncryptActivate.setDisable(true);
         encryptFileMessageForAsymmetric.setEditable(false);
         encryptFileKeyForAsymmetric.setEditable(true);
-        copyDecryptKeyFileButtonForAsymmetric.setVisible(false);
         saveEncryptFileButtonForAsymmetric.setVisible(false);
     }
 
     @FXML
     private void saveEncryptFileButtonForAsymmetric() {
-        byte[] bytes = publicKeyInfoBytes;
+        byte[] numbersss = new byte[] {0x01, 0x23, 0x45, 0x67, 0x76, 0x54, 0x32, 0x10, 0x31, 0x01, 0x23, 0x45, 0x67, 0x76, 0x54, 0x32, 0x10, 0x31};
+        byte[] bytes = new byte[publicKeyInfoBytes.length+18+fileFormatBytess.length];
+        System.arraycopy(publicKeyInfoBytes, 0, bytes, 0, publicKeyInfoBytes.length);
+        System.arraycopy(numbersss, 0, bytes, publicKeyInfoBytes.length, 18);
+        System.arraycopy(fileFormatBytess, 0, bytes, publicKeyInfoBytes.length+18, fileFormatBytess.length);
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Oluşturulan Şifreli Dosyayı Kaydet");
         fileChooser.setInitialFileName("sifreli_dosya");
