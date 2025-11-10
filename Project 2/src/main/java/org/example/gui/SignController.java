@@ -637,9 +637,10 @@ public class SignController implements Initializable {
         System.arraycopy(numbersss, 0, bytes, privateKeyFileInfoBytes.length, 18);
         System.arraycopy(privateKeyFileFormatBytes, 0, bytes, privateKeyFileInfoBytes.length+18, privateKeyFileFormatBytes.length);
 
+        String[] fileName = selectedFileSignSignName.split("\\.");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Oluşturulan İmzalı Dosyayı Kaydet");
-        fileChooser.setInitialFileName("imzali_dosya");
+        fileChooser.setInitialFileName(fileName[0]);
         FileChooser.ExtensionFilter fileFormat = new FileChooser.ExtensionFilter("İmzalanmış Dosyalar", "*.sig");
         fileChooser.getExtensionFilters().add(fileFormat);
         fileChooser.getSelectedExtensionFilter();
