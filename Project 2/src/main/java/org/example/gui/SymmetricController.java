@@ -447,9 +447,10 @@ public class SymmetricController implements Initializable {
     @FXML
     private void saveEncryptFileButtonForSymmetric() {
         byte[] bytes = encryptMessageInfoBytes;
+        String[] fileName = selectedFileSymmetricEncryptName.split("\\.");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Oluşturulan Şifreli Dosyayı Kaydet");
-        fileChooser.setInitialFileName("sifreli_dosya");
+        fileChooser.setInitialFileName(fileName[0]);
         FileChooser.ExtensionFilter fileFormat = new FileChooser.ExtensionFilter("Şifrelenmiş Dosyalar", "*.bin");
         fileChooser.getExtensionFilters().add(fileFormat);
         fileChooser.getSelectedExtensionFilter();
@@ -613,9 +614,10 @@ public class SymmetricController implements Initializable {
         byte[] fileNameFormatBytes = fileFormatBytes;
         String fileNameFormat = new String(fileNameFormatBytes, StandardCharsets.UTF_8);
 
+        String[] fileName = selectedFileSymmetricDecryptName.split("\\.");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Çözülmüş Dosyayı Kaydet");
-        fileChooser.setInitialFileName("cozulmus_dosya");
+        fileChooser.setInitialFileName(fileName[0]);
         FileChooser.ExtensionFilter fileFormat = new FileChooser.ExtensionFilter("Çözülmüş Dosyalar", "*." + fileNameFormat);
         fileChooser.getExtensionFilters().add(fileFormat);
         fileChooser.getSelectedExtensionFilter();
